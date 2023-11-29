@@ -47,7 +47,7 @@ class BaseAnimeListTileCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${type != null ? '$type ·' : ''} $season $year · $status",
+                    "${type != null ? '$type · ' : ''}${season != null ? '$season ' : ''}${year != null ? '$year · ' : ''}${status != null ? '$status' : ''}",
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
