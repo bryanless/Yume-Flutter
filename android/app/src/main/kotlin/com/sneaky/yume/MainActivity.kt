@@ -1,4 +1,4 @@
-package com.example.yume
+package com.sneaky.yume
 
 import io.flutter.embedding.android.FlutterActivity
 
