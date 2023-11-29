@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:yume/utils/edge_to_edge/edge_to_edge_services.dart';
-import 'package:yume/utils/shared_preferences_service.dart';
+import 'package:yume/core/utils/edge_to_edge/edge_to_edge_services.dart';
+import 'package:yume/core/utils/shared_preferences_service.dart';
 
 part 'main_event.dart';
 part 'main_state.dart';
@@ -13,7 +13,7 @@ part 'main_bloc.freezed.dart';
 class MainBloc extends Bloc<MainEvent, MainState> {
   MainBloc() : super(const _MainInitial()) {
     on<MainEvent>((event, emit) async {
-      event.when(
+      await event.when(
         load: (WidgetsBinding widgetsBinding) async {
           // Init SharedPreferences
           await SharedPreferencesService.init();
