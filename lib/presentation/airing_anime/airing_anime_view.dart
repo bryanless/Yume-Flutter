@@ -13,12 +13,21 @@ class AiringAnimeView extends StatelessWidget {
           case AiringAnimeStatus.error:
             return CustomEmptyView(label: state.errorMessage);
           case AiringAnimeStatus.success:
-            return ListView.builder(
+            return ListView.separated(
               itemCount: state.airingAnimes.length,
+              separatorBuilder: (context, index) =>
+                  SizedSpacer.vertical(space: Space.small),
               itemBuilder: (context, index) {
                 final anime = state.airingAnimes[index];
-                return ListTile(
-                  title: Text(anime.title.title),
+                return BaseAnimeListTileCard(
+                  title: anime.title.title,
+                  imageSource: anime.images.webp.imageUrl ??
+                      anime.images.jpg.imageUrl ??
+                      '',
+                  type: anime.type,
+                  status: anime.status,
+                  season: anime.season,
+                  year: anime.year,
                 );
               },
             );

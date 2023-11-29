@@ -23,6 +23,11 @@ mixin _$SearchAnimeResponse {
   @JsonKey(name: 'mal_id')
   int get id => throw _privateConstructorUsedError;
   List<AnimeTitleResponse> get titles => throw _privateConstructorUsedError;
+  AnimeImagesResponse get images => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  String? get season => throw _privateConstructorUsedError;
+  int? get year => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +41,16 @@ abstract class $SearchAnimeResponseCopyWith<$Res> {
           SearchAnimeResponse value, $Res Function(SearchAnimeResponse) then) =
       _$SearchAnimeResponseCopyWithImpl<$Res, SearchAnimeResponse>;
   @useResult
-  $Res call({@JsonKey(name: 'mal_id') int id, List<AnimeTitleResponse> titles});
+  $Res call(
+      {@JsonKey(name: 'mal_id') int id,
+      List<AnimeTitleResponse> titles,
+      AnimeImagesResponse images,
+      String? type,
+      String? status,
+      String? season,
+      int? year});
+
+  $AnimeImagesResponseCopyWith<$Res> get images;
 }
 
 /// @nodoc
@@ -54,6 +68,11 @@ class _$SearchAnimeResponseCopyWithImpl<$Res, $Val extends SearchAnimeResponse>
   $Res call({
     Object? id = null,
     Object? titles = null,
+    Object? images = null,
+    Object? type = freezed,
+    Object? status = freezed,
+    Object? season = freezed,
+    Object? year = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -64,7 +83,35 @@ class _$SearchAnimeResponseCopyWithImpl<$Res, $Val extends SearchAnimeResponse>
           ? _value.titles
           : titles // ignore: cast_nullable_to_non_nullable
               as List<AnimeTitleResponse>,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as AnimeImagesResponse,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      season: freezed == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as String?,
+      year: freezed == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AnimeImagesResponseCopyWith<$Res> get images {
+    return $AnimeImagesResponseCopyWith<$Res>(_value.images, (value) {
+      return _then(_value.copyWith(images: value) as $Val);
+    });
   }
 }
 
@@ -76,7 +123,17 @@ abstract class _$$SearchAnimeResponseImplCopyWith<$Res>
       __$$SearchAnimeResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'mal_id') int id, List<AnimeTitleResponse> titles});
+  $Res call(
+      {@JsonKey(name: 'mal_id') int id,
+      List<AnimeTitleResponse> titles,
+      AnimeImagesResponse images,
+      String? type,
+      String? status,
+      String? season,
+      int? year});
+
+  @override
+  $AnimeImagesResponseCopyWith<$Res> get images;
 }
 
 /// @nodoc
@@ -92,6 +149,11 @@ class __$$SearchAnimeResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? titles = null,
+    Object? images = null,
+    Object? type = freezed,
+    Object? status = freezed,
+    Object? season = freezed,
+    Object? year = freezed,
   }) {
     return _then(_$SearchAnimeResponseImpl(
       id: null == id
@@ -102,16 +164,42 @@ class __$$SearchAnimeResponseImplCopyWithImpl<$Res>
           ? _value._titles
           : titles // ignore: cast_nullable_to_non_nullable
               as List<AnimeTitleResponse>,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as AnimeImagesResponse,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      season: freezed == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as String?,
+      year: freezed == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$SearchAnimeResponseImpl implements _SearchAnimeResponse {
   const _$SearchAnimeResponseImpl(
       {@JsonKey(name: 'mal_id') required this.id,
-      required final List<AnimeTitleResponse> titles})
+      required final List<AnimeTitleResponse> titles,
+      required this.images,
+      required this.type,
+      required this.status,
+      required this.season,
+      required this.year})
       : _titles = titles;
 
   factory _$SearchAnimeResponseImpl.fromJson(Map<String, dynamic> json) =>
@@ -129,8 +217,19 @@ class _$SearchAnimeResponseImpl implements _SearchAnimeResponse {
   }
 
   @override
+  final AnimeImagesResponse images;
+  @override
+  final String? type;
+  @override
+  final String? status;
+  @override
+  final String? season;
+  @override
+  final int? year;
+
+  @override
   String toString() {
-    return 'SearchAnimeResponse(id: $id, titles: $titles)';
+    return 'SearchAnimeResponse(id: $id, titles: $titles, images: $images, type: $type, status: $status, season: $season, year: $year)';
   }
 
   @override
@@ -139,13 +238,25 @@ class _$SearchAnimeResponseImpl implements _SearchAnimeResponse {
         (other.runtimeType == runtimeType &&
             other is _$SearchAnimeResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._titles, _titles));
+            const DeepCollectionEquality().equals(other._titles, _titles) &&
+            (identical(other.images, images) || other.images == images) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.season, season) || other.season == season) &&
+            (identical(other.year, year) || other.year == year));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, const DeepCollectionEquality().hash(_titles));
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_titles),
+      images,
+      type,
+      status,
+      season,
+      year);
 
   @JsonKey(ignore: true)
   @override
@@ -164,9 +275,13 @@ class _$SearchAnimeResponseImpl implements _SearchAnimeResponse {
 
 abstract class _SearchAnimeResponse implements SearchAnimeResponse {
   const factory _SearchAnimeResponse(
-          {@JsonKey(name: 'mal_id') required final int id,
-          required final List<AnimeTitleResponse> titles}) =
-      _$SearchAnimeResponseImpl;
+      {@JsonKey(name: 'mal_id') required final int id,
+      required final List<AnimeTitleResponse> titles,
+      required final AnimeImagesResponse images,
+      required final String? type,
+      required final String? status,
+      required final String? season,
+      required final int? year}) = _$SearchAnimeResponseImpl;
 
   factory _SearchAnimeResponse.fromJson(Map<String, dynamic> json) =
       _$SearchAnimeResponseImpl.fromJson;
@@ -176,6 +291,16 @@ abstract class _SearchAnimeResponse implements SearchAnimeResponse {
   int get id;
   @override
   List<AnimeTitleResponse> get titles;
+  @override
+  AnimeImagesResponse get images;
+  @override
+  String? get type;
+  @override
+  String? get status;
+  @override
+  String? get season;
+  @override
+  int? get year;
   @override
   @JsonKey(ignore: true)
   _$$SearchAnimeResponseImplCopyWith<_$SearchAnimeResponseImpl> get copyWith =>

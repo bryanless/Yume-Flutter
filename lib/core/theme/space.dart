@@ -1,6 +1,9 @@
 part of 'themes.dart';
 
 class Space {
+  /// 4.0
+  static const double tiny = 4;
+
   /// 8.0
   static const double small = 8;
 

@@ -18,6 +18,11 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SearchAnimeModel {
   int get id => throw _privateConstructorUsedError;
   AnimeTitleModel get title => throw _privateConstructorUsedError;
+  AnimeImagesModel get images => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  String? get season => throw _privateConstructorUsedError;
+  int? get year => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SearchAnimeModelCopyWith<SearchAnimeModel> get copyWith =>
@@ -30,9 +35,17 @@ abstract class $SearchAnimeModelCopyWith<$Res> {
           SearchAnimeModel value, $Res Function(SearchAnimeModel) then) =
       _$SearchAnimeModelCopyWithImpl<$Res, SearchAnimeModel>;
   @useResult
-  $Res call({int id, AnimeTitleModel title});
+  $Res call(
+      {int id,
+      AnimeTitleModel title,
+      AnimeImagesModel images,
+      String? type,
+      String? status,
+      String? season,
+      int? year});
 
   $AnimeTitleModelCopyWith<$Res> get title;
+  $AnimeImagesModelCopyWith<$Res> get images;
 }
 
 /// @nodoc
@@ -50,6 +63,11 @@ class _$SearchAnimeModelCopyWithImpl<$Res, $Val extends SearchAnimeModel>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? images = null,
+    Object? type = freezed,
+    Object? status = freezed,
+    Object? season = freezed,
+    Object? year = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -60,6 +78,26 @@ class _$SearchAnimeModelCopyWithImpl<$Res, $Val extends SearchAnimeModel>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as AnimeTitleModel,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as AnimeImagesModel,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      season: freezed == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as String?,
+      year: freezed == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -68,6 +106,14 @@ class _$SearchAnimeModelCopyWithImpl<$Res, $Val extends SearchAnimeModel>
   $AnimeTitleModelCopyWith<$Res> get title {
     return $AnimeTitleModelCopyWith<$Res>(_value.title, (value) {
       return _then(_value.copyWith(title: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AnimeImagesModelCopyWith<$Res> get images {
+    return $AnimeImagesModelCopyWith<$Res>(_value.images, (value) {
+      return _then(_value.copyWith(images: value) as $Val);
     });
   }
 }
@@ -80,10 +126,19 @@ abstract class _$$SearchAnimeModelImplCopyWith<$Res>
       __$$SearchAnimeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, AnimeTitleModel title});
+  $Res call(
+      {int id,
+      AnimeTitleModel title,
+      AnimeImagesModel images,
+      String? type,
+      String? status,
+      String? season,
+      int? year});
 
   @override
   $AnimeTitleModelCopyWith<$Res> get title;
+  @override
+  $AnimeImagesModelCopyWith<$Res> get images;
 }
 
 /// @nodoc
@@ -99,6 +154,11 @@ class __$$SearchAnimeModelImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? images = null,
+    Object? type = freezed,
+    Object? status = freezed,
+    Object? season = freezed,
+    Object? year = freezed,
   }) {
     return _then(_$SearchAnimeModelImpl(
       id: null == id
@@ -109,6 +169,26 @@ class __$$SearchAnimeModelImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as AnimeTitleModel,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as AnimeImagesModel,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      season: freezed == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as String?,
+      year: freezed == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -116,16 +196,33 @@ class __$$SearchAnimeModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchAnimeModelImpl implements _SearchAnimeModel {
-  const _$SearchAnimeModelImpl({required this.id, required this.title});
+  const _$SearchAnimeModelImpl(
+      {required this.id,
+      required this.title,
+      required this.images,
+      required this.type,
+      required this.status,
+      required this.season,
+      required this.year});
 
   @override
   final int id;
   @override
   final AnimeTitleModel title;
+  @override
+  final AnimeImagesModel images;
+  @override
+  final String? type;
+  @override
+  final String? status;
+  @override
+  final String? season;
+  @override
+  final int? year;
 
   @override
   String toString() {
-    return 'SearchAnimeModel(id: $id, title: $title)';
+    return 'SearchAnimeModel(id: $id, title: $title, images: $images, type: $type, status: $status, season: $season, year: $year)';
   }
 
   @override
@@ -134,11 +231,17 @@ class _$SearchAnimeModelImpl implements _SearchAnimeModel {
         (other.runtimeType == runtimeType &&
             other is _$SearchAnimeModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title));
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.images, images) || other.images == images) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.season, season) || other.season == season) &&
+            (identical(other.year, year) || other.year == year));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title);
+  int get hashCode =>
+      Object.hash(runtimeType, id, title, images, type, status, season, year);
 
   @JsonKey(ignore: true)
   @override
@@ -151,12 +254,27 @@ class _$SearchAnimeModelImpl implements _SearchAnimeModel {
 abstract class _SearchAnimeModel implements SearchAnimeModel {
   const factory _SearchAnimeModel(
       {required final int id,
-      required final AnimeTitleModel title}) = _$SearchAnimeModelImpl;
+      required final AnimeTitleModel title,
+      required final AnimeImagesModel images,
+      required final String? type,
+      required final String? status,
+      required final String? season,
+      required final int? year}) = _$SearchAnimeModelImpl;
 
   @override
   int get id;
   @override
   AnimeTitleModel get title;
+  @override
+  AnimeImagesModel get images;
+  @override
+  String? get type;
+  @override
+  String? get status;
+  @override
+  String? get season;
+  @override
+  int? get year;
   @override
   @JsonKey(ignore: true)
   _$$SearchAnimeModelImplCopyWith<_$SearchAnimeModelImpl> get copyWith =>
