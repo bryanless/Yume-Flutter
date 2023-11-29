@@ -7,6 +7,16 @@ class AiringAnimePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("hi");
+    return BlocProvider(
+      create: (context) => AiringAnimeBloc(
+        getSearchAnimeRepository: Injection.provideGetSearchAnimeRepository(),
+      )..add(const AiringAnimeEvent.load()),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Airing Anime'),
+        ),
+        body: const AiringAnimeView(),
+      ),
+    );
   }
 }

@@ -8,6 +8,6 @@ part 'search_anime_model.freezed.dart';
 class SearchAnimeModel with _$SearchAnimeModel {
   const factory SearchAnimeModel({
     required int id,
-    required AnimeTitleModel titles,
+    required AnimeTitleModel title,
   }) = _SearchAnimeModel;
 }

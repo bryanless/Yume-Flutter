@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SearchAnimeModel {
   int get id => throw _privateConstructorUsedError;
-  AnimeTitleModel get titles => throw _privateConstructorUsedError;
+  AnimeTitleModel get title => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SearchAnimeModelCopyWith<SearchAnimeModel> get copyWith =>
@@ -30,9 +30,9 @@ abstract class $SearchAnimeModelCopyWith<$Res> {
           SearchAnimeModel value, $Res Function(SearchAnimeModel) then) =
       _$SearchAnimeModelCopyWithImpl<$Res, SearchAnimeModel>;
   @useResult
-  $Res call({int id, AnimeTitleModel titles});
+  $Res call({int id, AnimeTitleModel title});
 
-  $AnimeTitleModelCopyWith<$Res> get titles;
+  $AnimeTitleModelCopyWith<$Res> get title;
 }
 
 /// @nodoc
@@ -49,25 +49,25 @@ class _$SearchAnimeModelCopyWithImpl<$Res, $Val extends SearchAnimeModel>
   @override
   $Res call({
     Object? id = null,
-    Object? titles = null,
+    Object? title = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      titles: null == titles
-          ? _value.titles
-          : titles // ignore: cast_nullable_to_non_nullable
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as AnimeTitleModel,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AnimeTitleModelCopyWith<$Res> get titles {
-    return $AnimeTitleModelCopyWith<$Res>(_value.titles, (value) {
-      return _then(_value.copyWith(titles: value) as $Val);
+  $AnimeTitleModelCopyWith<$Res> get title {
+    return $AnimeTitleModelCopyWith<$Res>(_value.title, (value) {
+      return _then(_value.copyWith(title: value) as $Val);
     });
   }
 }
@@ -80,10 +80,10 @@ abstract class _$$SearchAnimeModelImplCopyWith<$Res>
       __$$SearchAnimeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, AnimeTitleModel titles});
+  $Res call({int id, AnimeTitleModel title});
 
   @override
-  $AnimeTitleModelCopyWith<$Res> get titles;
+  $AnimeTitleModelCopyWith<$Res> get title;
 }
 
 /// @nodoc
@@ -98,16 +98,16 @@ class __$$SearchAnimeModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? titles = null,
+    Object? title = null,
   }) {
     return _then(_$SearchAnimeModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      titles: null == titles
-          ? _value.titles
-          : titles // ignore: cast_nullable_to_non_nullable
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as AnimeTitleModel,
     ));
   }
@@ -116,16 +116,16 @@ class __$$SearchAnimeModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchAnimeModelImpl implements _SearchAnimeModel {
-  const _$SearchAnimeModelImpl({required this.id, required this.titles});
+  const _$SearchAnimeModelImpl({required this.id, required this.title});
 
   @override
   final int id;
   @override
-  final AnimeTitleModel titles;
+  final AnimeTitleModel title;
 
   @override
   String toString() {
-    return 'SearchAnimeModel(id: $id, titles: $titles)';
+    return 'SearchAnimeModel(id: $id, title: $title)';
   }
 
   @override
@@ -134,11 +134,11 @@ class _$SearchAnimeModelImpl implements _SearchAnimeModel {
         (other.runtimeType == runtimeType &&
             other is _$SearchAnimeModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.titles, titles) || other.titles == titles));
+            (identical(other.title, title) || other.title == title));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, titles);
+  int get hashCode => Object.hash(runtimeType, id, title);
 
   @JsonKey(ignore: true)
   @override
@@ -151,12 +151,12 @@ class _$SearchAnimeModelImpl implements _SearchAnimeModel {
 abstract class _SearchAnimeModel implements SearchAnimeModel {
   const factory _SearchAnimeModel(
       {required final int id,
-      required final AnimeTitleModel titles}) = _$SearchAnimeModelImpl;
+      required final AnimeTitleModel title}) = _$SearchAnimeModelImpl;
 
   @override
   int get id;
   @override
-  AnimeTitleModel get titles;
+  AnimeTitleModel get title;
   @override
   @JsonKey(ignore: true)
   _$$SearchAnimeModelImplCopyWith<_$SearchAnimeModelImpl> get copyWith =>
