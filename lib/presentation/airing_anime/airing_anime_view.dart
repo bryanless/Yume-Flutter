@@ -13,23 +13,32 @@ class AiringAnimeView extends StatelessWidget {
           case AiringAnimeStatus.error:
             return CustomEmptyView(label: state.errorMessage);
           case AiringAnimeStatus.success:
-            return ListView.separated(
-              itemCount: state.airingAnimes.length,
-              separatorBuilder: (context, index) =>
-                  SizedSpacer.vertical(space: Space.small),
-              itemBuilder: (context, index) {
-                final anime = state.airingAnimes[index];
-                return BaseAnimeListTileCard(
-                  title: anime.title.title,
-                  imageSource: anime.images.webp.imageUrl ??
-                      anime.images.jpg.imageUrl ??
-                      '',
-                  type: anime.type,
-                  status: anime.status,
-                  season: anime.season,
-                  year: anime.year,
-                );
-              },
+            return SafeArea(
+              child: CustomScrollView(
+                slivers: [
+                  SliverPadding(
+                    padding: const EdgeInsets.all(16.0),
+                    sliver: SliverList.separated(
+                      itemCount: state.airingAnimes.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final anime = state.airingAnimes[index];
+                        return BaseAnimeListTileCard(
+                          title: anime.title.title,
+                          imageSource: anime.images.jpg.imageUrl ?? '',
+                          alternativeImageSource: anime.images.webp.imageUrl,
+                          type: anime.type,
+                          status: anime.status,
+                          season: anime.season,
+                          year: anime.year,
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return SizedSpacer.vertical(space: Space.small);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             );
         }
       },
