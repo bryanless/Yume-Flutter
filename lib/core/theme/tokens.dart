@@ -1,34 +1,5 @@
 part of 'themes.dart';
 
-class CardTokens {
-  /// 0.10
-  static const pressedContainerOpacity = 0.10;
-}
-
-class ChipTokens {
-  /// 0.12
-  static const disabledContainerOpacity = DisabledTokens.disabledContainerAlpha;
-
-  /// 0.38
-  static const disabledContentOpacity = DisabledTokens.disabledContentAlpha;
-
-  /// 0.12
-  static const disabledOutlineOpacity = DisabledTokens.disabledContainerAlpha;
-}
-
-class ColorSchemeTokens {
-  /// 0.38
-  static const disabledAlpha = 0.38;
-}
-
-class DisabledTokens {
-  /// 0.12
-  static const disabledContainerAlpha = 0.12;
-
-  /// 0.38
-  static const disabledContentAlpha = 0.38;
-}
-
 class EasingDurationTokens {
   /// `Duration` 500ms
   ///
@@ -79,17 +50,6 @@ class ElevationTokens {
 
   /// 12.0
   static const level5 = 12.0;
-}
-
-class FilledCardTokens {
-  /// 0.0
-  static const containerElevation = ElevationTokens.level0;
-
-  /// 1.0
-  static const disabledContainerElevation = ElevationTokens.level1;
-
-  /// 0.38
-  static const disabledContainerAlpha = ColorSchemeTokens.disabledAlpha;
 }
 
 class StateLayerOpacityTokens {
