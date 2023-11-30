@@ -26,8 +26,10 @@ class DynamicTheme {
 
   static ThemeData _getThemeData(BuildContext context, ColorScheme scheme) {
     return ThemeData(
-      useMaterial3: true,
       colorScheme: scheme,
+      textTheme: GoogleFonts.nunitoTextTheme(
+        Theme.of(context).textTheme,
+      ),
       cardTheme: const CardTheme(
         margin: EdgeInsets.all(0),
       ),
