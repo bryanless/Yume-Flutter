@@ -106,7 +106,7 @@ class BaseAnimeListTileCard extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         splashColor: theme.colorScheme.onSurface
-            .withOpacity(CardTokens.pressedContainerOpacity),
+            .withOpacity(StateLayerOpacityTokens.press),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
