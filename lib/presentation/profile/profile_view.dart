@@ -27,6 +27,7 @@ class ProfileView extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       radius: 40,
+                      backgroundImage: AppImages.profilePicture,
                     ),
                     SizedSpacer.horizontal(space: Space.medium),
                     Expanded(
