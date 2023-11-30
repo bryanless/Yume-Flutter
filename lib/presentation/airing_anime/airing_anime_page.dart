@@ -1,9 +1,11 @@
 part of 'airing_animes.dart';
 
 class AiringAnimePage extends StatelessWidget {
-  const AiringAnimePage({super.key});
+  const AiringAnimePage({super.key, required this.onAnimeListTileCardClick});
 
   static const String routeName = '/airing-anime';
+
+  final Function(int id) onAnimeListTileCardClick;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,9 @@ class AiringAnimePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Airing Anime'),
         ),
-        body: const AiringAnimeView(),
+        body: AiringAnimeView(
+          onAnimeListTileCardClick: onAnimeListTileCardClick,
+        ),
       ),
     );
   }

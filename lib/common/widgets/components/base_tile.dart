@@ -78,6 +78,7 @@ class BaseAnimeListTileCard extends StatelessWidget {
     this.status,
     this.season,
     this.year,
+    required this.onTap,
   });
 
   final String title;
@@ -87,6 +88,7 @@ class BaseAnimeListTileCard extends StatelessWidget {
   final String? status;
   final String? season;
   final int? year;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +104,7 @@ class BaseAnimeListTileCard extends StatelessWidget {
       ),
       clipBehavior: Clip.hardEdge,
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         splashColor: theme.colorScheme.onSurface
             .withOpacity(CardTokens.pressedContainerOpacity),
         child: Row(

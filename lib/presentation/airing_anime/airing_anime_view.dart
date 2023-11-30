@@ -1,7 +1,9 @@
 part of 'airing_animes.dart';
 
 class AiringAnimeView extends StatelessWidget {
-  const AiringAnimeView({super.key});
+  const AiringAnimeView({super.key, required this.onAnimeListTileCardClick});
+
+  final Function(int id) onAnimeListTileCardClick;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,7 @@ class AiringAnimeView extends StatelessWidget {
                           status: anime.status,
                           season: anime.season,
                           year: anime.year,
+                          onTap: () => onAnimeListTileCardClick(anime.id),
                         );
                       },
                       separatorBuilder: (BuildContext context, int index) {
