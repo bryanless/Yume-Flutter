@@ -1,5 +1,10 @@
 part of 'themes.dart';
 
+class CardTokens {
+  /// 0.10
+  static const pressedContainerOpacity = 0.10;
+}
+
 class ChipTokens {
   /// 0.12
   static const disabledContainerOpacity = DisabledTokens.disabledContainerAlpha;

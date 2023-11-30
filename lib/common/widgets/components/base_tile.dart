@@ -101,45 +101,50 @@ class BaseAnimeListTileCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(RoundedShape.small),
       ),
       clipBehavior: Clip.hardEdge,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          BaseAnimeImageListTile(
-            source: imageSource,
-            alternativeSource: alternativeImageSource,
-          ),
-          SizedSpacer.horizontal(space: Space.small),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(
-                0,
-                Space.small,
-                Space.medium,
-                Space.small,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "${type != null ? '$type · ' : ''}${season != null ? '$season ' : ''}${year != null ? '$year · ' : ''}${status != null ? '$status' : ''}",
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
+      child: InkWell(
+        onTap: () {},
+        splashColor: theme.colorScheme.onSurface
+            .withOpacity(CardTokens.pressedContainerOpacity),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BaseAnimeImageListTile(
+              source: imageSource,
+              alternativeSource: alternativeImageSource,
+            ),
+            SizedSpacer.horizontal(space: Space.small),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  0,
+                  Space.small,
+                  Space.medium,
+                  Space.small,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "${type != null ? '$type · ' : ''}${season != null ? '$season ' : ''}${year != null ? '$year · ' : ''}${status != null ? '$status' : ''}",
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
                     ),
-                  ),
-                  Text(
-                    title,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 3,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      color: theme.colorScheme.onSurface,
+                    Text(
+                      title,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 3,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        color: theme.colorScheme.onSurface,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
