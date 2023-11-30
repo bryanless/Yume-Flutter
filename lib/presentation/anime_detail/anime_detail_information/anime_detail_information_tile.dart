@@ -13,8 +13,11 @@ class AnimeDetailInformationTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final subheadlineStyle = theme.textTheme.bodyMedium?.copyWith(
+    final titleStyle = theme.textTheme.bodyMedium?.copyWith(
       color: theme.colorScheme.onSurfaceVariant,
+    );
+    final subtitleStyle = theme.textTheme.bodyMedium?.copyWith(
+      color: theme.colorScheme.onBackground,
     );
 
     return Column(
@@ -22,9 +25,12 @@ class AnimeDetailInformationTile extends StatelessWidget {
       children: [
         Text(
           title,
-          style: subheadlineStyle,
+          style: titleStyle,
         ),
-        Text(subtitle)
+        Text(
+          subtitle,
+          style: subtitleStyle,
+        ),
       ],
     );
   }
