@@ -51,12 +51,18 @@ class _ProfileEditViewState extends State<ProfileEditView> {
           case ProfileEditStatus.updateSuccess:
             return SafeArea(
               child: SingleChildScrollView(
+                padding: const EdgeInsets.all(Space.medium),
                 child: Form(
                   key: _formKey,
                   child: Column(
                     children: [
                       TextFormField(
                         initialValue: state.name,
+                        decoration: const InputDecoration(
+                          labelText: 'Name',
+                          hintText: 'Bryan',
+                          border: OutlineInputBorder(),
+                        ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Name must not be empty';
@@ -68,7 +74,11 @@ class _ProfileEditViewState extends State<ProfileEditView> {
                               .read<ProfileEditBloc>()
                               .add(ProfileEditEvent.formUpdate(name: value));
                         },
+                        onTapOutside: (event) {
+                          FocusScope.of(context).unfocus();
+                        },
                       ),
+                      SizedSpacer.vertical(space: Space.medium),
                       FilledButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
