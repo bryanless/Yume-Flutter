@@ -12,5 +12,5 @@ class AiringAnimeState with _$AiringAnimeState {
     @Default(AiringAnimeStatus.loading) AiringAnimeStatus status,
     @Default([]) List<SearchAnimeModel> airingAnimes,
     @Default('') String errorMessage,
-  }) = _AiringAnimeInitial;
+  }) = _AiringAnimeState;
 }

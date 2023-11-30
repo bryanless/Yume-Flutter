@@ -19,6 +19,8 @@ _$SearchAnimeResponseImpl _$$SearchAnimeResponseImplFromJson(
       status: json['status'] as String?,
       season: json['season'] as String?,
       year: json['year'] as int?,
+      synopsis: json['synopsis'] as String?,
+      episodes: json['episodes'] as int?,
     );
 
 Map<String, dynamic> _$$SearchAnimeResponseImplToJson(
@@ -31,4 +33,6 @@ Map<String, dynamic> _$$SearchAnimeResponseImplToJson(
       'status': instance.status,
       'season': instance.season,
       'year': instance.year,
+      'synopsis': instance.synopsis,
+      'episodes': instance.episodes,
     };

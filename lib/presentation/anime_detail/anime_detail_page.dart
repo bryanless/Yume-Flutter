@@ -12,11 +12,14 @@ class AnimeDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Anime Detail'),
+    return BlocProvider<AnimeDetailBloc>(
+      create: (context) => AnimeDetailBloc(
+        getSearchAnimeRepository: Injection.provideGetSearchAnimeRepository(),
+      )..add(AnimeDetailEvent.load(id: id)),
+      child: Scaffold(
+        appBar: AppBar(),
+        body: const AnimeDetailView(),
       ),
-      body: const AnimeDetailView(),
     );
   }
 }

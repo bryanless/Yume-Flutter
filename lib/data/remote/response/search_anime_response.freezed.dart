@@ -28,6 +28,8 @@ mixin _$SearchAnimeResponse {
   String? get status => throw _privateConstructorUsedError;
   String? get season => throw _privateConstructorUsedError;
   int? get year => throw _privateConstructorUsedError;
+  String? get synopsis => throw _privateConstructorUsedError;
+  int? get episodes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +50,9 @@ abstract class $SearchAnimeResponseCopyWith<$Res> {
       String? type,
       String? status,
       String? season,
-      int? year});
+      int? year,
+      String? synopsis,
+      int? episodes});
 
   $AnimeImagesResponseCopyWith<$Res> get images;
 }
@@ -73,6 +77,8 @@ class _$SearchAnimeResponseCopyWithImpl<$Res, $Val extends SearchAnimeResponse>
     Object? status = freezed,
     Object? season = freezed,
     Object? year = freezed,
+    Object? synopsis = freezed,
+    Object? episodes = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -103,6 +109,14 @@ class _$SearchAnimeResponseCopyWithImpl<$Res, $Val extends SearchAnimeResponse>
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as int?,
+      synopsis: freezed == synopsis
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
+              as String?,
+      episodes: freezed == episodes
+          ? _value.episodes
+          : episodes // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -130,7 +144,9 @@ abstract class _$$SearchAnimeResponseImplCopyWith<$Res>
       String? type,
       String? status,
       String? season,
-      int? year});
+      int? year,
+      String? synopsis,
+      int? episodes});
 
   @override
   $AnimeImagesResponseCopyWith<$Res> get images;
@@ -154,6 +170,8 @@ class __$$SearchAnimeResponseImplCopyWithImpl<$Res>
     Object? status = freezed,
     Object? season = freezed,
     Object? year = freezed,
+    Object? synopsis = freezed,
+    Object? episodes = freezed,
   }) {
     return _then(_$SearchAnimeResponseImpl(
       id: null == id
@@ -184,6 +202,14 @@ class __$$SearchAnimeResponseImplCopyWithImpl<$Res>
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as int?,
+      synopsis: freezed == synopsis
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
+              as String?,
+      episodes: freezed == episodes
+          ? _value.episodes
+          : episodes // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -199,7 +225,9 @@ class _$SearchAnimeResponseImpl implements _SearchAnimeResponse {
       required this.type,
       required this.status,
       required this.season,
-      required this.year})
+      required this.year,
+      required this.synopsis,
+      required this.episodes})
       : _titles = titles;
 
   factory _$SearchAnimeResponseImpl.fromJson(Map<String, dynamic> json) =>
@@ -226,10 +254,14 @@ class _$SearchAnimeResponseImpl implements _SearchAnimeResponse {
   final String? season;
   @override
   final int? year;
+  @override
+  final String? synopsis;
+  @override
+  final int? episodes;
 
   @override
   String toString() {
-    return 'SearchAnimeResponse(id: $id, titles: $titles, images: $images, type: $type, status: $status, season: $season, year: $year)';
+    return 'SearchAnimeResponse(id: $id, titles: $titles, images: $images, type: $type, status: $status, season: $season, year: $year, synopsis: $synopsis, episodes: $episodes)';
   }
 
   @override
@@ -243,7 +275,11 @@ class _$SearchAnimeResponseImpl implements _SearchAnimeResponse {
             (identical(other.type, type) || other.type == type) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.season, season) || other.season == season) &&
-            (identical(other.year, year) || other.year == year));
+            (identical(other.year, year) || other.year == year) &&
+            (identical(other.synopsis, synopsis) ||
+                other.synopsis == synopsis) &&
+            (identical(other.episodes, episodes) ||
+                other.episodes == episodes));
   }
 
   @JsonKey(ignore: true)
@@ -256,7 +292,9 @@ class _$SearchAnimeResponseImpl implements _SearchAnimeResponse {
       type,
       status,
       season,
-      year);
+      year,
+      synopsis,
+      episodes);
 
   @JsonKey(ignore: true)
   @override
@@ -281,7 +319,9 @@ abstract class _SearchAnimeResponse implements SearchAnimeResponse {
       required final String? type,
       required final String? status,
       required final String? season,
-      required final int? year}) = _$SearchAnimeResponseImpl;
+      required final int? year,
+      required final String? synopsis,
+      required final int? episodes}) = _$SearchAnimeResponseImpl;
 
   factory _SearchAnimeResponse.fromJson(Map<String, dynamic> json) =
       _$SearchAnimeResponseImpl.fromJson;
@@ -301,6 +341,10 @@ abstract class _SearchAnimeResponse implements SearchAnimeResponse {
   String? get season;
   @override
   int? get year;
+  @override
+  String? get synopsis;
+  @override
+  int? get episodes;
   @override
   @JsonKey(ignore: true)
   _$$SearchAnimeResponseImplCopyWith<_$SearchAnimeResponseImpl> get copyWith =>

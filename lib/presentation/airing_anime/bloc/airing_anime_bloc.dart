@@ -11,7 +11,7 @@ class AiringAnimeBloc extends Bloc<AiringAnimeEvent, AiringAnimeState> {
   AiringAnimeBloc({
     required GetSearchAnimeRepository getSearchAnimeRepository,
   })  : _getSearchAnimeRepository = getSearchAnimeRepository,
-        super(const _AiringAnimeInitial()) {
+        super(const _AiringAnimeState()) {
     on<AiringAnimeEvent>((event, emit) async {
       await event.when(load: () async {
         List<SearchAnimeModel> airingAnimes =

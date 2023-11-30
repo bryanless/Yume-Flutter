@@ -222,11 +222,11 @@ class _$AiringAnimeStateCopyWithImpl<$Res, $Val extends AiringAnimeState>
 }
 
 /// @nodoc
-abstract class _$$AiringAnimeInitialImplCopyWith<$Res>
+abstract class _$$AiringAnimeStateImplCopyWith<$Res>
     implements $AiringAnimeStateCopyWith<$Res> {
-  factory _$$AiringAnimeInitialImplCopyWith(_$AiringAnimeInitialImpl value,
-          $Res Function(_$AiringAnimeInitialImpl) then) =
-      __$$AiringAnimeInitialImplCopyWithImpl<$Res>;
+  factory _$$AiringAnimeStateImplCopyWith(_$AiringAnimeStateImpl value,
+          $Res Function(_$AiringAnimeStateImpl) then) =
+      __$$AiringAnimeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -236,11 +236,11 @@ abstract class _$$AiringAnimeInitialImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AiringAnimeInitialImplCopyWithImpl<$Res>
-    extends _$AiringAnimeStateCopyWithImpl<$Res, _$AiringAnimeInitialImpl>
-    implements _$$AiringAnimeInitialImplCopyWith<$Res> {
-  __$$AiringAnimeInitialImplCopyWithImpl(_$AiringAnimeInitialImpl _value,
-      $Res Function(_$AiringAnimeInitialImpl) _then)
+class __$$AiringAnimeStateImplCopyWithImpl<$Res>
+    extends _$AiringAnimeStateCopyWithImpl<$Res, _$AiringAnimeStateImpl>
+    implements _$$AiringAnimeStateImplCopyWith<$Res> {
+  __$$AiringAnimeStateImplCopyWithImpl(_$AiringAnimeStateImpl _value,
+      $Res Function(_$AiringAnimeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -250,7 +250,7 @@ class __$$AiringAnimeInitialImplCopyWithImpl<$Res>
     Object? airingAnimes = null,
     Object? errorMessage = null,
   }) {
-    return _then(_$AiringAnimeInitialImpl(
+    return _then(_$AiringAnimeStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -269,8 +269,8 @@ class __$$AiringAnimeInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AiringAnimeInitialImpl implements _AiringAnimeInitial {
-  const _$AiringAnimeInitialImpl(
+class _$AiringAnimeStateImpl implements _AiringAnimeState {
+  const _$AiringAnimeStateImpl(
       {this.status = AiringAnimeStatus.loading,
       final List<SearchAnimeModel> airingAnimes = const [],
       this.errorMessage = ''})
@@ -301,7 +301,7 @@ class _$AiringAnimeInitialImpl implements _AiringAnimeInitial {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AiringAnimeInitialImpl &&
+            other is _$AiringAnimeStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality()
                 .equals(other._airingAnimes, _airingAnimes) &&
@@ -316,16 +316,16 @@ class _$AiringAnimeInitialImpl implements _AiringAnimeInitial {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AiringAnimeInitialImplCopyWith<_$AiringAnimeInitialImpl> get copyWith =>
-      __$$AiringAnimeInitialImplCopyWithImpl<_$AiringAnimeInitialImpl>(
+  _$$AiringAnimeStateImplCopyWith<_$AiringAnimeStateImpl> get copyWith =>
+      __$$AiringAnimeStateImplCopyWithImpl<_$AiringAnimeStateImpl>(
           this, _$identity);
 }
 
-abstract class _AiringAnimeInitial implements AiringAnimeState {
-  const factory _AiringAnimeInitial(
+abstract class _AiringAnimeState implements AiringAnimeState {
+  const factory _AiringAnimeState(
       {final AiringAnimeStatus status,
       final List<SearchAnimeModel> airingAnimes,
-      final String errorMessage}) = _$AiringAnimeInitialImpl;
+      final String errorMessage}) = _$AiringAnimeStateImpl;
 
   @override
   AiringAnimeStatus get status;
@@ -335,6 +335,6 @@ abstract class _AiringAnimeInitial implements AiringAnimeState {
   String get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$$AiringAnimeInitialImplCopyWith<_$AiringAnimeInitialImpl> get copyWith =>
+  _$$AiringAnimeStateImplCopyWith<_$AiringAnimeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

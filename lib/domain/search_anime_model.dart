@@ -15,5 +15,7 @@ class SearchAnimeModel with _$SearchAnimeModel {
     required String? status,
     required String? season,
     required int? year,
+    required String? synopsis,
+    required int? episodes,
   }) = _SearchAnimeModel;
 }

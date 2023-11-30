@@ -24,6 +24,8 @@ class SearchAnimesTransformer {
             status: e.status,
             season: e.season?.toTitleCase(),
             year: e.year,
+            synopsis: e.synopsis,
+            episodes: e.episodes,
           ),
         )
         .toList();

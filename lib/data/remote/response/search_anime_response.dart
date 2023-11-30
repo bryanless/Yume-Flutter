@@ -17,6 +17,8 @@ class SearchAnimeResponse with _$SearchAnimeResponse {
     required String? status,
     required String? season,
     required int? year,
+    required String? synopsis,
+    required int? episodes,
   }) = _SearchAnimeResponse;
 
   factory SearchAnimeResponse.fromJson(Map<String, dynamic> json) =>
