@@ -13,6 +13,7 @@ class SharedPreferencesService {
   static late final SharedPreferences _instance;
 
   static const _themeKey = 'theme';
+  static const _name = 'name';
 
   static Future<SharedPreferences> init() async =>
       _instance = await SharedPreferences.getInstance();
@@ -22,4 +23,7 @@ class SharedPreferencesService {
       orElse: () => ThemeStyle.light);
   static set theme(ThemeStyle theme) =>
       _instance.setString(_themeKey, theme.value);
+
+  static String get name => _instance.getString(_name) ?? 'Bryan';
+  static set name(String name) => _instance.setString(_name, name);
 }

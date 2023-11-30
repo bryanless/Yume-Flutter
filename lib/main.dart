@@ -7,6 +7,7 @@ import 'package:yume/app/mains.dart';
 import 'package:yume/common/widgets/widgets.dart';
 import 'package:yume/core/theme/themes.dart';
 import 'package:yume/core/utils/shared_preferences_service.dart';
+import 'package:yume/presentation/profile/bloc/profile_bloc.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => MainBloc()..add(MainEvent.load(widgetsBinding)),
+        ),
+        BlocProvider(
+          create: (context) => ProfileBloc(),
         ),
       ],
       child: BlocBuilder<MainBloc, MainState>(

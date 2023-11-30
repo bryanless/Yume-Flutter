@@ -16,27 +16,24 @@ class AnimeDetailView extends StatelessWidget {
             return SafeArea(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(Space.medium),
-                child: Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AnimeDetailOverviewView(anime: state.anime!),
-                      SizedSpacer.vertical(space: Space.large),
-                      if (state.anime!.synopsis != null &&
-                          state.anime!.synopsis!.isNotEmpty) ...[
-                        const Divider(),
-                        SizedSpacer.vertical(space: Space.large),
-                        AnimeDetailSynopsisView(
-                            synopsis: state.anime!.synopsis!),
-                        SizedSpacer.vertical(space: Space.large),
-                      ],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AnimeDetailOverviewView(anime: state.anime!),
+                    SizedSpacer.vertical(space: Space.large),
+                    if (state.anime!.synopsis != null &&
+                        state.anime!.synopsis!.isNotEmpty) ...[
                       const Divider(),
                       SizedSpacer.vertical(space: Space.large),
-                      AnimeDetailInformation(
-                        anime: state.anime!,
-                      ),
+                      AnimeDetailSynopsisView(synopsis: state.anime!.synopsis!),
+                      SizedSpacer.vertical(space: Space.large),
                     ],
-                  ),
+                    const Divider(),
+                    SizedSpacer.vertical(space: Space.large),
+                    AnimeDetailInformation(
+                      anime: state.anime!,
+                    ),
+                  ],
                 ),
               ),
             );

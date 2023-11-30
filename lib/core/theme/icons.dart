@@ -32,5 +32,6 @@ sealed class IconSize {
 }
 
 class AppIcons {
+  static const IconData accountCircle = Icons.account_circle_rounded;
   static const IconData brokenImage = Icons.broken_image_rounded;
 }
